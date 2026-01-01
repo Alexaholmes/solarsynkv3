@@ -94,7 +94,7 @@ def GetNewSettingsFromHAEntity(SunSynkToken,Serial):
 
     try:
         # GET HA Settings from entity
-        response = home_assistant_client.get("/states/input_text.solarsynkv3_" + Serial + '_settings')
+        response = home_assistant_client.get("/states/input_text.solarsynkv3_" + Serial + '_settings_AH')
         response.raise_for_status()
         parsed_inverter_json = response.json()
         
@@ -261,7 +261,7 @@ def ResetSettingsEntity(Serial):
 
     home_assistant_client = HomeAssistantClient()
 
-    path = "/states/input_text.solarsynkv3_" + Serial + '_settings'
+    path = "/states/input_text.solarsynkv3_" + Serial + '_settings_AH'
     payload = {"attributes": {"unit_of_measurement": ""}, "state": ""}
 
     #BOF CHECK IF SETTINGS HELPER EXIST
@@ -431,5 +431,6 @@ def replace_string_true_with_boolean(obj):
         return True
     else:
         return obj
+
 
 
