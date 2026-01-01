@@ -126,7 +126,7 @@ if BearerToken:
             # SETUP VARS
             SUPERVISOR_URL = os.getenv("SUPERVISOR", "http://supervisor")
             SUPERVISOR_TOKEN = os.getenv("SUPERVISOR_TOKEN")
-            url = f"{SUPERVISOR_URL}/core/api/states/input_text.solarsynkv3_{serialitem}_settings"
+            url = f"{SUPERVISOR_URL}/core/api/states/input_text.solarsynkv3_{serialitem}_settings_AH"
             print(ConsoleColor.MAGENTA + "URL --> " + url + ConsoleColor.ENDC)
             
             headers = {
